@@ -1,5 +1,6 @@
 from telebot import TeleBot
 apikey="5830939991:AAHq6vi4dkZgSs8NN0jEpLHFrnw-APuhCLk"
+from hanlder import welcome_handler,plan_handler,buy_handler,joined_handler,back,conntact,approve_or_reject,admin_handler,tesks,status,chat_member
 bot=TeleBot(apikey)
 bot.register_message_handler(welcome_handler.welcome,commands=['start'],pass_bot=True)
 bot.register_message_handler(conntact.send_contact,func=lambda message : message.text=="Contact Support",pass_bot=True)
