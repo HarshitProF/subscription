@@ -3,7 +3,6 @@ from telebot import util
 #from telebot.util.update_types import message,callback_query,my_chat_member,chat_member,chat_join_request
 import apscheduler
 admin='741728025'
-from hanlder import welcome_handler,plan_handler,buy_handler,joined_handler,back,conntact,approve_or_reject,admin_handler,tesks,status,chat_member
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 
