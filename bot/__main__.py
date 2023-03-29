@@ -1,5 +1,4 @@
 from . import bot
-import threading
 from telebot import util
 #from telebot.util.update_types import message,callback_query,my_chat_member,chat_member,chat_join_request
 import apscheduler
@@ -32,7 +31,6 @@ if __name__=="__main__":
     bot.register_callback_query_handler(approve_or_reject.reject,func=lambda CallbackQuery:CallbackQuery.data.split("-")[0]=="reject",pass_bot=True)
     schedule=BackgroundScheduler(job_stores=job_stores,demon=True,timezone="Asia/Kolkata")
     schedule.add_job(func=tesks.reminder ,kwargs={'bot':bot},trigger='cron',hour='21',minute='36')
-    x=threading.Thread(target=schedule.start )
-    x.start()
+    schedule.start()
     print(schedule.get_jobs())
     bot.infinity_polling(allowed_updates=['message','callback_query','my_chat_member','chat_member'])
